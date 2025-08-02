@@ -10,7 +10,7 @@
 }
 
 body {
-	background-image: url('img/onlineresultsys.jpg');
+	background-image: url('img/books1.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
 }
