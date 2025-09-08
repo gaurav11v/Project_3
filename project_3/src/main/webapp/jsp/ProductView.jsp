@@ -1,5 +1,3 @@
-<%@page import="in.co.rays.project_3.util.HTMLUtility"%>
-<%@page import="java.util.HashMap"%>
 <%@page import="in.co.rays.project_3.controller.ProductCtl"%>
 <%@page import="in.co.rays.project_3.util.DataUtility"%>
 <%@page import="in.co.rays.project_3.util.ServletUtility"%>
@@ -23,7 +21,7 @@ i.css {
 .p4 {
 	background-image: url('<%=ORSView.APP_CONTEXT%>/img/user1.jpg');
 	background-repeat: no-repeat;
-	background-attachment: fixed;
+	background-attachment: fixed;9
 	background-size: cover;
 	padding-top: 75px;
 
@@ -133,33 +131,30 @@ i.css {
 											</div>
 										</div>
 										<input type="text" name="productAmmount" class="form-control"
-											placeholder="Enter Ammount"
+											placeholder="Enter Address"
 											value="<%=DataUtility.getStringData(dto.getProductAmmount())%>">
 									</div>
 								</div>
 								<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("productAmmount", request)%></font></br>
 
 
-								<span class="pl-sm-5"><b>Product Category</b><span style="color: red;">*</span></span> </br>
-							 
-	<div class="col-sm-12">
-      <div class="input-group">
-        <div class="input-group-prepend">
-          <div class="input-group-text"><i class="fa fa-venus-mars grey-text" style="font-size: 1rem;"></i> </div>
-        </div>
-        
-									<%
-									HashMap map = new HashMap();
-									map.put("High", "High");
-									map.put("Medium", "Medium");
-									map.put("Low", "Low");
-										String htmlList = HTMLUtility.getList("productCategory", dto.getProductCategory(), map);
-									%>
-									<%=htmlList%></div>
-      
-    </div>		
-	<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("productCategory", request)%></font></br>
-							
+								<span class="pl-sm-5"><b>ProductCategory</b><span
+									style="color: red;">*</span></span> </br>
+								<div class="col-sm-12">
+									<div class="input-group">
+										<div class="input-group-prepend">
+											<div class="input-group-text">
+												<i class="fa fa-address-card grey-text"
+													style="font-size: 1rem;"></i>
+											</div>
+										</div>
+										<input type="text" name="productCategory" class="form-control"
+											placeholder="Enter State"
+											value="<%=DataUtility.getStringData(dto.getProductCategory())%>">
+									</div>
+								</div>
+								<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("productCategory", request)%></font></br>
+
 								<span class="pl-sm-5"><b>PurchaseDate</b> <span
 									style="color: red;">*</span></span></br>
 								<div class="col-sm-12">

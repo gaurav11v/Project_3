@@ -2,10 +2,6 @@ package in.co.rays.project_3.dto;
 
 import java.util.Date;
 
-/**
- * @author Dto
- *
- */
 public class ProductDTO extends BaseDTO {
 
 	private String productName;

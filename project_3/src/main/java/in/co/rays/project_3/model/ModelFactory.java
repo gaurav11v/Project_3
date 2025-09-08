@@ -62,7 +62,7 @@ public final class ModelFactory {
 				productModel = new ProductModelHibImp();
 			}
 			if ("JDBC".equals(DATABASE)) {
-				productModel = new ProductModelHibImp();
+				productModel = new ProductModelJDBCImpl();
 			}
 			modelCache.put("productModel", productModel);
 		}

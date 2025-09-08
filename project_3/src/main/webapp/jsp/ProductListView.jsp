@@ -1,4 +1,3 @@
-<%@page import="java.util.HashMap"%>
 <%@page import="in.co.rays.project_3.dto.ProductDTO"%>
 <%@page import="in.co.rays.project_3.controller.ProductListCtl"%>
 <%@page import="java.util.Iterator"%>
@@ -14,7 +13,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Product List</title>
+<title>User List</title>
 <script src="<%=ORSView.APP_CONTEXT%>/js/jquery.min.js"></script>
 <script type="text/javascript"
 	src="<%=ORSView.APP_CONTEXT%>/js/CheckBox11.js"></script>
@@ -41,7 +40,6 @@
 </style>
 </head>
 <%@include file="Header.jsp"%>
-<%@include file="calendar.jsp"%>
 <body class="hm">
 	<div>
 		<form class="pb-5" action="<%=ORSView.PRODUCT_LIST_CTL%>"
@@ -107,13 +105,12 @@
 
 			<div class="row">
 
-<div class="col-sm-2"></div>
+				<div class="col-sm-2"></div>
 				<div class="col-sm-2">
 					<input type="text" name="productName"
 						placeholder="Enter productName" class="form-control"
 						value="<%=ServletUtility.getParameter("productName", request)%>">
 				</div>
-				
 				&emsp;
 				<div class="col-sm-2">
 					<input type="text" name="productAmmount"
@@ -121,22 +118,6 @@
 						value="<%=ServletUtility.getParameter("productAmmount", request)%>">
 				</div>
 				&emsp;
-
-
-				<div class="col-sm-3">
-					<%
-						HashMap map = new HashMap();
-							map.put("High", "High");
-							map.put("Medium", "Medium");
-							map.put("Low", "Low");
-							String htmlList = HTMLUtility.getList("productCategory", dto.getProductCategory(), map);
-					%>
-					<%=htmlList%>
-					<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("productCategory", request)%></font></br>
-				</div>
-				&emsp;
-				
-				
 
 				<div class="col-sm-2">
 					<input type="submit" class="btn btn-primary btn-md"

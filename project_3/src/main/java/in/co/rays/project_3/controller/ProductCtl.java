@@ -88,49 +88,60 @@ public class ProductCtl extends BaseCtl {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 
-		String op = request.getParameter("operation");
-		long id = DataUtility.getLong(request.getParameter("id"));
-
+		String op = DataUtility.getString(request.getParameter("operation"));
+		System.out
+				.println("-------------------------------------------------------------------------dopost run-------");
+		// get model
 		ProductModelInt model = ModelFactory.getInstance().getProductModel();
-
+		long id = DataUtility.getLong(request.getParameter("id"));
 		if (OP_SAVE.equalsIgnoreCase(op) || OP_UPDATE.equalsIgnoreCase(op)) {
-
 			ProductDTO dto = (ProductDTO) populateDTO(request);
-
+			System.out.println(" in do post method jkjjkjk++++++++" + dto.getId());
 			try {
 				if (id > 0) {
-					dto.setId(id);
 					model.update(dto);
-					ServletUtility.setDto(dto, request);
-
-					ServletUtility.setSuccessMessage("Record Successfully Updated", request);
-
+					ServletUtility.setSuccessMessage("Data is successfully Updated", request);
 				} else {
-					System.out.println("college add" + dto + "id...." + id);
-					// long pk
-					model.add(dto);
-					ServletUtility.setSuccessMessage("Record Successfully Saved", request);
+
+					try {
+						model.add(dto);
+						ServletUtility.setSuccessMessage("Data is successfully saved", request);
+					} catch (ApplicationException e) {
+						log.error(e);
+						e.printStackTrace();
+						ServletUtility.handleException(e, request, response);
+						return;
+					} catch (DuplicateRecordException e) {
+						ServletUtility.setDto(dto, request);
+						e.printStackTrace();
+						ServletUtility.setErrorMessage("Product name is already exists", request);
+					}
+
 				}
 				ServletUtility.setDto(dto, request);
+
 			} catch (ApplicationException e) {
 				e.printStackTrace();
 				log.error(e);
 				ServletUtility.handleException(e, request, response);
 				return;
 			} catch (DuplicateRecordException e) {
+				e.printStackTrace();
 				ServletUtility.setDto(dto, request);
-				ServletUtility.setErrorMessage("ProductName Already Exists", request);
+				ServletUtility.setErrorMessage("Product name is already exists", request);
 			}
-		} else if (OP_RESET.equalsIgnoreCase(op)) {
-			ServletUtility.redirect(ORSView.PRODUCT_CTL, request, response);
-			return;
 		} else if (OP_CANCEL.equalsIgnoreCase(op)) {
 
 			ServletUtility.redirect(ORSView.PRODUCT_LIST_CTL, request, response);
 			return;
+		} else if (OP_RESET.equalsIgnoreCase(op)) {
 
+			ServletUtility.redirect(ORSView.PRODUCT_CTL, request, response);
+			return;
 		}
 		ServletUtility.forward(getView(), request, response);
+
+		log.debug("productctl Method doPostEnded");
 	}
 
 	@Override

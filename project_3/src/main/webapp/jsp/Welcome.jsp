@@ -29,7 +29,7 @@
 	<div class="text-cs1">
 		<center>
 			<h1 style="padding-top: 20%; color: white">
-				<b class="cl">" Welcome to ORS "</b>
+				<b class="cl">" Welcome to online result system "</b>
 			</h1>
 		</center>
 	</div>
