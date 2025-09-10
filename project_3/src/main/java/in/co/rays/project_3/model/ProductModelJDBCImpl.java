@@ -215,6 +215,5 @@ public class ProductModelJDBCImpl implements ProductModelInt {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
 	}
 

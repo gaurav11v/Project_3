@@ -16,6 +16,7 @@ in\co\rays\project_3\model\FacultyModelHibImp.class
 in\co\rays\project_3\dto\DropdownList.class
 in\co\rays\project_3\test\StudentModelTest.class
 in\co\rays\project_3\exception\ApplicationException.class
+in\co\rays\project_3\model\ProductModelJDBCImpl.class
 in\co\rays\project_3\controller\UserListCtl.class
 in\co\rays\project_3\model\SubjectModelHibImp.class
 in\co\rays\project_3\controller\EmployeeListCtl.class

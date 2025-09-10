@@ -15,7 +15,7 @@
       changeYear: true,
       changeMonth : true,
 		changeYear : true,
-		yearRange : '1970:2025',
+		yearRange : '2000:2024',
 		dateFormat : 'dd/mm/yy',
 		endDate : '-18y',
 			maxDate:0 
@@ -55,8 +55,8 @@
 			changeMonth : true,
 			changeYear : true,
 			//yearRange: "c-20:c+0",
-			//yearRange : "1980:2025",
-		maxDate:'31/12/2007',
+			yearRange : "1990:2024",
+		maxDate:'31/12/2024',
 		// minDate:0
 		yearRange : "-40:-18"
 		});
