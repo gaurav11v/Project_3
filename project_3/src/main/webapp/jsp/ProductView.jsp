@@ -21,7 +21,7 @@ i.css {
 .p4 {
 	background-image: url('<%=ORSView.APP_CONTEXT%>/img/user1.jpg');
 	background-repeat: no-repeat;
-	background-attachment: fixed;9
+	background-attachment: fixed;
 	background-size: cover;
 	padding-top: 75px;
 
