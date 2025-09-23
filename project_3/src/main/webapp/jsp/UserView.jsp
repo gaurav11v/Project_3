@@ -26,7 +26,7 @@ i.css {
 }
 
 .hm {
-	background-image: url('<%=ORSView.APP_CONTEXT%>/img/user1.jpg');
+	background-image: url('<%=ORSView.APP_CONTEXT%>/img/Linkme.jpg');
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: cover;
