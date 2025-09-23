@@ -64,7 +64,7 @@
 			%>
 			<center>
 				<h1 class="text-dark font-weight-bold pt-3">
-					<u>Product List 10</u>
+					<u>Product List </u>
 				</h1>
 			</center>
 			<div class="row">
